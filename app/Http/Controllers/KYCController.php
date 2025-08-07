@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\StoreKYCRequest;
 use Illuminate\Http\Request;
 
 
@@ -11,9 +12,9 @@ class KYCController extends Controller
         return view('kyc.form');   
     }
 
-    public function submit(Request $request) 
+    public function submit(StoreKYCRequest $request) 
     {
-        dd($request->all());
+        dd($request);
         // return "submit";
     }
 

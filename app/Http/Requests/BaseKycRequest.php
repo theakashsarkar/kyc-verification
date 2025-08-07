@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BaseKycRequest extends FormRequest
+abstract class BaseKycRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -31,6 +31,6 @@ class BaseKycRequest extends FormRequest
             'nid_front' => 'required|image|max:2048',
             'nid_back'  => 'required|image|max:2048',
             'selfi'     => 'required|image|max:2048' 
-        ];
+        ];     
     }
 }

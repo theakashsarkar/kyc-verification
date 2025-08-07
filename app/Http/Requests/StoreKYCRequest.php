@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreKYCRequest extends FormRequest
+class StoreKYCRequest extends BaseKycRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,7 @@ class StoreKYCRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            $this->commonRules(),
         ];
     }
 }
