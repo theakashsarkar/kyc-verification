@@ -11,7 +11,7 @@ class StoreKYCRequest extends BaseKycRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**

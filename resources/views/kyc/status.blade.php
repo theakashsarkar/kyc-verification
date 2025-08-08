@@ -70,17 +70,20 @@
     <div class="bg-gray-50 border-l-4 border-green-500 p-4 rounded-md shadow-sm mb-6">
       <div class="flex justify-between items-center mb-2">
         <div>
-          <h3 class="text-lg font-semibold text-gray-800">KYC Status</h3>
-          <p class="text-sm text-gray-600">Name: <span class="font-medium">Rahim Uddin</span></p>
-          <p class="text-sm text-gray-600">Tracking ID: <span class="font-mono">KYC12345678</span></p>
+          <h3 class="text-lg font-semibold text-gray-800">{{ $kycView->status }}</h3>
+          <p class="text-sm text-gray-600">Name: <span class="font-medium">{{ $kycView->full_name }}</span></p>
+{{--          <p class="text-sm text-gray-600">Tracking ID: <span class="font-mono">KYC12345678</span></p>--}}
         </div>
-        <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-800">
-          ✅ Verified
-        </span>
+          @if($kycView === \App\Enums\Status::Approved)
+              <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-800">
+                 ✅ Verified
+              </span>
+          @endif
+
       </div>
-      <p class="text-sm text-gray-500">
-        Verified on: <span class="font-medium">August 2, 2025</span>
-      </p>
+        <p class="text-sm text-gray-500">
+            Verified on: <span class="font-medium">August 2, 2025</span>
+        </p>
     </div>
 
     <!-- Document Previews -->
@@ -90,7 +93,7 @@
       <!-- NID Front -->
       <div class="bg-white border rounded-md overflow-hidden shadow">
         <div class="p-2 bg-gray-100 text-center font-medium text-sm text-gray-600">NID Front</div>
-        <img src="https://via.placeholder.com/300x200?text=NID+Front" alt="NID Front" class="w-full h-48 object-cover" />
+        <img src="{{ asset('storage/' . $kycView->nid_front) }}" alt="NID Front" class="w-full h-48 object-cover" />
         <div class="p-2 text-center">
           <a href="#" class="text-indigo-600 text-sm hover:underline"><i class="fas fa-eye mr-1"></i>View Full</a>
         </div>
@@ -99,7 +102,7 @@
       <!-- NID Back -->
       <div class="bg-white border rounded-md overflow-hidden shadow">
         <div class="p-2 bg-gray-100 text-center font-medium text-sm text-gray-600">NID Back</div>
-        <img src="https://via.placeholder.com/300x200?text=NID+Back" alt="NID Back" class="w-full h-48 object-cover" />
+        <img src="{{ asset('storage/' . $kycView->nid_back) }}" alt="NID Back" class="w-full h-48 object-cover" />
         <div class="p-2 text-center">
           <a href="#" class="text-indigo-600 text-sm hover:underline"><i class="fas fa-eye mr-1"></i>View Full</a>
         </div>
@@ -108,7 +111,7 @@
       <!-- Selfie -->
       <div class="bg-white border rounded-md overflow-hidden shadow">
         <div class="p-2 bg-gray-100 text-center font-medium text-sm text-gray-600">Selfie</div>
-        <img src="https://via.placeholder.com/300x200?text=Selfie" alt="Selfie" class="w-full h-48 object-cover" />
+        <img src="{{ asset('storage/' . $kycView->selfie) }}" alt="Selfie" class="w-full h-48 object-cover" />
         <div class="p-2 text-center">
           <a href="#" class="text-indigo-600 text-sm hover:underline"><i class="fas fa-eye mr-1"></i>View Full</a>
         </div>

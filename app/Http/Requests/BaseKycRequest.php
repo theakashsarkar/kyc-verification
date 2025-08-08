@@ -27,10 +27,10 @@ abstract class BaseKycRequest extends FormRequest
             'dob'         => 'required|date|before:today',
             'address'     => 'required|string|max:500',
 
-            //image validation 
-            'nid_front' => 'required|image|max:2048',
-            'nid_back'  => 'required|image|max:2048',
-            'selfi'     => 'required|image|max:2048' 
-        ];     
+            //image validation
+            'nid_front' => 'required|image|max:2048|file',
+            'nid_back'  => 'required|image|max:2048|file',
+            'selfi'     => 'required|image|max:2048|file'
+        ];
     }
 }

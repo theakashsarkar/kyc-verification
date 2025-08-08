@@ -13,8 +13,8 @@
 
   <div class="w-full max-w-2xl bg-white p-8 rounded-lg shadow-lg">
     <h2 class="text-3xl font-semibold text-center text-indigo-600 mb-8">NID Submission Form</h2>
-    
-    <form class="space-y-6" method="post" action="{{route('kyc.submit')}}">
+
+    <form class="space-y-6" method="post" action="{{route('kyc.submit')}}" enctype="multipart/form-data">
         @csrf
 
       <!-- Full Name -->
@@ -94,5 +94,5 @@
 </div>
 </html>
 
-  
+
 </x-app-layout>
